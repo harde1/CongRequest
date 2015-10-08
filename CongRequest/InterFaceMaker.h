@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Jiekou : NSObject
-+(void)makeJiekouByStr:(NSString *)str;
+@interface InterFaceMaker : NSObject
++(void)makeInterFaceMakerByStr:(NSString *)str;
 @end

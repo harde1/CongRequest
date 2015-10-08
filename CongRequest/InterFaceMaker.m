@@ -6,12 +6,12 @@
 //  Copyright © 2015年 cong. All rights reserved.
 //
 
-#import "Jiekou.h"
+#import "InterFaceMaker.h"
 
-@implementation Jiekou
+@implementation InterFaceMaker
 
 
-+(void)makeJiekouByStr:(NSString *)str {
++(void)makeInterFaceMakerByStr:(NSString *)str {
     NSDictionary* dict = [self dictionaryWithHttp:str];
     
     NSString * path_ori = [[[str componentsSeparatedByString:@"?"] firstObject] lastPathComponent];
