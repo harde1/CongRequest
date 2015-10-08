@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.homepage     = "http://blog.csdn.net/jianrenbubai/article/details/48847969"
   s.license      = "MIT"
   s.author             = { "剑仁不败" => "harde1@163.com","敏钦" => "799621181@qq.com" }
-  s.source       = { :git => "https://github.com/harde1/CongRequest.git", :tag => 'ed320e15937ae089f9473922f65baf3e8460e927' }
+  s.source       = { :git => "https://github.com/harde1/CongRequest.git", :tag => '0.0.1' }
   s.source_files  = "CongRequest/*.{h,m}"
   s.dependency 'YTKNetwork', '~> 0.5.0'
 end
