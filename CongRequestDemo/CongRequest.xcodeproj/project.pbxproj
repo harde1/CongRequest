@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57414B7F4973737FE9C1BFC2 /* libPods-CongRequest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB3D6DC07A7FF2914D9F9C5 /* libPods-CongRequest.a */; };
 		F4873F4A1BC619C90055B71F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4873F491BC619C90055B71F /* main.m */; };
 		F4873F4D1BC619C90055B71F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4873F4C1BC619C90055B71F /* AppDelegate.m */; };
 		F4873F501BC619C90055B71F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4873F4F1BC619C90055B71F /* ViewController.m */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2CB3D6DC07A7FF2914D9F9C5 /* libPods-CongRequest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CongRequest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69FD6C2E6D8E5CE1681A35CF /* Pods-CongRequest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CongRequest.release.xcconfig"; path = "Pods/Target Support Files/Pods-CongRequest/Pods-CongRequest.release.xcconfig"; sourceTree = "<group>"; };
+		D38A7850B48F8E5E161F226F /* Pods-CongRequest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CongRequest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CongRequest/Pods-CongRequest.debug.xcconfig"; sourceTree = "<group>"; };
 		F4873F451BC619C90055B71F /* CongRequest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CongRequest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4873F491BC619C90055B71F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F4873F4B1BC619C90055B71F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57414B7F4973737FE9C1BFC2 /* libPods-CongRequest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03FA49FF52EC3489034DDF02 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D38A7850B48F8E5E161F226F /* Pods-CongRequest.debug.xcconfig */,
+				69FD6C2E6D8E5CE1681A35CF /* Pods-CongRequest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8DDDA61D01AAE2654DC9C92F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CB3D6DC07A7FF2914D9F9C5 /* libPods-CongRequest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F4873F3C1BC619C90055B71F = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				F4873F611BC619C90055B71F /* CongRequestTests */,
 				F4873F6C1BC619C90055B71F /* CongRequestUITests */,
 				F4873F461BC619C90055B71F /* Products */,
+				03FA49FF52EC3489034DDF02 /* Pods */,
+				8DDDA61D01AAE2654DC9C92F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4873F721BC619C90055B71F /* Build configuration list for PBXNativeTarget "CongRequest" */;
 			buildPhases = (
+				4C14B4C937BAEBB7A1DBB250 /* Check Pods Manifest.lock */,
 				F4873F411BC619C90055B71F /* Sources */,
 				F4873F421BC619C90055B71F /* Frameworks */,
 				F4873F431BC619C90055B71F /* Resources */,
+				E8D969852D311D8257CA26CD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,6 +290,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C14B4C937BAEBB7A1DBB250 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E8D969852D311D8257CA26CD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CongRequest/Pods-CongRequest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F4873F411BC619C90055B71F /* Sources */ = {
@@ -411,6 +470,7 @@
 		};
 		F4873F731BC619C90055B71F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D38A7850B48F8E5E161F226F /* Pods-CongRequest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CongRequest/Info.plist;
@@ -422,6 +482,7 @@
 		};
 		F4873F741BC619C90055B71F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69FD6C2E6D8E5CE1681A35CF /* Pods-CongRequest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CongRequest/Info.plist;
@@ -498,6 +559,7 @@
 				F4873F741BC619C90055B71F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4873F751BC619C90055B71F /* Build configuration list for PBXNativeTarget "CongRequestTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +568,7 @@
 				F4873F771BC619C90055B71F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4873F781BC619C90055B71F /* Build configuration list for PBXNativeTarget "CongRequestUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +577,7 @@
 				F4873F7A1BC619C90055B71F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

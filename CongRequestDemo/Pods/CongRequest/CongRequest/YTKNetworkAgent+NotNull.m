@@ -8,7 +8,6 @@
 
 #import "YTKNetworkAgent+NotNull.h"
 #import "YTKNetworkPrivateNotNull.h"
-#import "YTKRequest+ResponseNotNull.h"
 #import "YTKRequest.h"
 @implementation YTKNetworkAgent (NotNull)
 

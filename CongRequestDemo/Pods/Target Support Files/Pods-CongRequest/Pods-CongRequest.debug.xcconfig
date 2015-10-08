@@ -1,0 +1,5 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFDownloadRequestOperation" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/CongRequest" "${PODS_ROOT}/Headers/Public/YTKNetwork"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFDownloadRequestOperation" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/CongRequest" -isystem "${PODS_ROOT}/Headers/Public/YTKNetwork"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"AFDownloadRequestOperation" -l"AFNetworking" -l"CongRequest" -l"YTKNetwork" -framework "CoreGraphics" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration"
+PODS_ROOT = ${SRCROOT}/Pods
