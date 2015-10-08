@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author             = { "剑仁不败" => "harde1@163.com" }
   s.source       = { :git => "http://EXAMPLE/CongRequest.git", :tag => s.version.to_s }
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  s.source_files  = "CongRequest/*.{h,m}"
   s.dependency 'YTKNetwork', '~> 0.5.0'
 end
