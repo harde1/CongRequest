@@ -8,6 +8,7 @@
 
 #import "YTKRequest+ResponseNotNull.h"
 #import <objc/runtime.h>
+#import "YTKNetworkConfig.h"
 static const void *notNullDictKey = &notNullDictKey;
 @implementation YTKRequest (ResponseNotNull)
 @dynamic notNullDict;
@@ -30,7 +31,7 @@ static const void *notNullDictKey = &notNullDictKey;
 -(void)startNotNullWithCompletionBlockWithSuccess:(void (^)(YTKRequest * request ,NSDictionary * responseDict))success failure:(void (^)(YTKRequest *request))failure{
     
     
-    NSLog(@"\n===========request===========\nhttp://%@%@?%@\n详细参数:\n%@",BASE_URL ,[self requestUrl],[self dictTransitoString:[self requestArgument]], [self requestArgument]);
+    NSLog(@"\n===========request===========\n%@%@?%@\n详细参数:\n%@",[YTKNetworkConfig sharedInstance].baseUrl ,[self requestUrl],[self dictTransitoString:[self requestArgument]], [self requestArgument]);
     
     [self startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
         YTKRequest * yTKRequest = (YTKRequest *)request;
@@ -48,10 +49,10 @@ static const void *notNullDictKey = &notNullDictKey;
     } failure:^(YTKBaseRequest *request) {
         YTKRequest * yTKRequest = (YTKRequest *)request;
         
-        NSLog(@"\n=========== 请求失败 ===========\nhttp://%@%@?%@\n详细参数:\n%@",BASE_URL ,[self requestUrl],[self dictTransitoString:[self requestArgument]], [self requestArgument]);
+        NSLog(@"\n=========== 请求失败 ===========\n%@%@?%@\n详细参数:\n%@",[YTKNetworkConfig sharedInstance].baseUrl ,[self requestUrl],[self dictTransitoString:[self requestArgument]], [self requestArgument]);
         
         if (request.responseStatusCode==0) {
-            [Commtools showShortToast:[[UtilCommon getCurrentVC] view] andString:@"网络不给力，请检查网络配置"];
+            NSLog(@"网络不给力，请检查网络配置");
         }else{
             failure(yTKRequest);
         }

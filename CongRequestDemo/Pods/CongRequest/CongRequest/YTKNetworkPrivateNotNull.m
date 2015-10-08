@@ -8,7 +8,7 @@
 
 #import "YTKNetworkPrivateNotNull.h"
 #import "PrintObject.h"
-
+#import "YTKRequest+ResponseNotNull.h"
 @implementation YTKNetworkPrivateNotNull
 
 
