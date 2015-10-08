@@ -37,7 +37,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CongRequest:
-    :commit: 460a3852db8ba6732013b8078f43c0578a319669
+    :commit: 0d796d216b9ca7a96af6a611c7744bc3ec6eb030
     :git: https://github.com/harde1/CongRequest
 
 SPEC CHECKSUMS:
