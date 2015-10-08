@@ -34,7 +34,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFDownloadRequestOperation: 748a1643423e1ddb23f2178f778087d4f0ae8ac7
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
-  CongRequest: 2ce1a61332394fef98c84d0543bde23e649e9ac4
+  CongRequest: d1f43931b0b0f67d30d17c6921df1da1ef328a07
   YTKNetwork: 3f163c181ce5f03d52cf88f39d6757f46894280c
 
 COCOAPODS: 0.38.2

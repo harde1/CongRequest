@@ -16,6 +16,6 @@
 #import "YTKNetworkPrivateNotNull.h"
 #import "UtilReflect.h"
 #import "PrintObject.h"
-#import "YTKNetworkConfig.h"
+
 
 #endif /* CongRequest_h */

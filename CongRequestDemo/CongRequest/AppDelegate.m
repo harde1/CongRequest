@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CongRequest.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    
+    //第一步、接口域名定义
+    YTKNetworkConfig *config = [YTKNetworkConfig sharedInstance];
+    config.baseUrl = @"http://api.map.baidu.com/telematics/v3";
+    InterFaceMaker * interFaceMaker = [InterFaceMaker sharedManager];
+    interFaceMaker.basePath = @"/Users/cong/Documents/CongRequest/CongRequestDemo/CongRequest/";
+    
+    
     return YES;
 }
 

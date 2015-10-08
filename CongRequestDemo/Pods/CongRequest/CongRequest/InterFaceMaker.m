@@ -6,16 +6,42 @@
 //  Copyright © 2015年 cong. All rights reserved.
 //
 
-#import "Jiekou.h"
+#import "InterFaceMaker.h"
 
-@implementation Jiekou
+@implementation InterFaceMaker
+
++ (InterFaceMaker *)sharedManager
+{
+    static InterFaceMaker *sharedAccountManagerInstance = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        sharedAccountManagerInstance = [[self alloc] init];
+    });
+    return sharedAccountManagerInstance;
+}
 
 
-+(void)makeJiekouByStr:(NSString *)str {
+
++(void)makeInterFaceMakerByStr:(NSString *)str {
     NSDictionary* dict = [self dictionaryWithHttp:str];
     
     NSString * path_ori = [[[str componentsSeparatedByString:@"?"] firstObject] lastPathComponent];
+    
+    
+    NSMutableCharacterSet *base = [NSMutableCharacterSet letterCharacterSet]; //字母
+    NSCharacterSet *decimalDigit = [NSCharacterSet decimalDigitCharacterSet];   //十进制数字
+    [base formUnionWithCharacterSet:decimalDigit];    //字母加十进制
+
+    
+    
+    
     NSString * path = [path_ori capitalizedStringWithLocale:[NSLocale currentLocale]];
+    
+    
+    [base invert];
+    
+   NSString *  safe_path = [[path componentsSeparatedByCharactersInSet:base] componentsJoinedByString:@"_"];
+    
     
     NSString * str_property = @"@property(copy,nonatomic)NSString * ";
     NSString * initWith = @"- (id)initWith";
@@ -29,7 +55,7 @@
     NSString * str_h = @"//\n//  %@Api.h\n//  接口文件自动产生\n//\n//  Created by cong\n//\n\n#import <Foundation/Foundation.h>\n#import \"%@.h\"\n\n@interface %@Api : %@\n%@\n%@\n@end";
     NSString * initWith_h = @"";
     //.m文件
-    NSString * str_m = @"//\n//  %@Api.h\n//  接口文件自动产生\n//\n//  Created by cong\n//\n\n#import \"%@Api.h\"\n\n\n@implementation %@Api\n\n%@ {\n    self = [super init];\n    if (self) {\n        %@\n    }\n    return self;\n}\n- (NSString *)requestUrl {\n    return @\"/%@\";\n}\n\n- (id)requestArgument {\n    return [UtilReflect dictionartRreflectDataWith:self];\n}\n- (NSInteger)cacheTimeInSeconds {\n    return %d;\n}\n\n//json检查，新增方法,把正确的json例子放在这里，它就会自动判断参数正确不正确\n-(id)jsonStringValidator{\nreturn nil;\n\n}\n@end\n";
+    NSString * str_m = @"//\n//  %@Api.h\n//  接口文件自动产生\n//\n//  Created by cong\n//\n\n#import \"%@Api.h\"\n#import \"UtilReflect.h\"\n\n@implementation %@Api\n\n%@ {\n    self = [super init];\n    if (self) {\n        %@\n    }\n    return self;\n}\n- (NSString *)requestUrl {\n    return @\"/%@\";\n}\n\n- (id)requestArgument {\n    return [UtilReflect dictionartRreflectDataWith:self];\n}\n- (NSInteger)cacheTimeInSeconds {\n    return %d;\n}\n\n//json检查，新增方法,把正确的json例子放在这里，它就会自动判断参数正确不正确\n-(id)jsonStringValidator{\nreturn nil;\n\n}\n@end\n";
     int int_cachetime = 30;
     NSString * initWith_m = @"";
     NSString * all_x_eq_x = @"";
@@ -65,24 +91,37 @@
         }
     }
     //.h文件
-    str_h = [NSString stringWithFormat:str_h,path,str_super,path,str_super,all_property,initWith_h];
+    str_h = [NSString stringWithFormat:str_h,safe_path,str_super,safe_path,str_super,all_property,initWith_h];
     
     
     
     //.m文件
-     str_m = [NSString stringWithFormat:str_m,path,path,path,initWith_m,all_x_eq_x,path_ori,int_cachetime];
+     str_m = [NSString stringWithFormat:str_m,safe_path,safe_path,safe_path,initWith_m,all_x_eq_x,path_ori,int_cachetime];
     
     
     
     //对于错误信息
     NSError *error;
-    // 创建文件管理器
+    //创建文件管理器
     NSFileManager *fileMgr = [NSFileManager defaultManager];
     
-    NSString * loc_path = @"/Users/cong/Documents/PudiEdu/PudiEdu";
+    NSString * loc_path = [self sharedManager].basePath;
     
-    NSString * loc_path_h = [loc_path stringByAppendingPathComponent:[path stringByAppendingString:@"Api.h"]];
-     NSString * loc_path_m = [loc_path stringByAppendingPathComponent:[path stringByAppendingString:@"Api.m"]];
+    
+    NSLog(@"%@\n\n\n\n%@",str_h,str_m);
+    
+    if (!loc_path) {
+        NSLog(@"@waring:[InterFaceMaker sharedManager].baseUrl接口文件的保存路径还没有设置");
+        
+        return;
+    }
+    
+    
+   
+    
+    
+    NSString * loc_path_h = [loc_path stringByAppendingPathComponent:[safe_path stringByAppendingString:@"Api.h"]];
+     NSString * loc_path_m = [loc_path stringByAppendingPathComponent:[safe_path stringByAppendingString:@"Api.m"]];
     
     
     if (![fileMgr fileExistsAtPath:loc_path_h]) {
@@ -99,6 +138,9 @@
             NSLog(@"%@",error);
         }
     
+        
+        NSLog(@"=======================接口文件已经产生=================\n%@\n%@",loc_path_h,loc_path_m);
+        
     }
     
     

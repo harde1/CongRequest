@@ -16,6 +16,7 @@
 		F4873F581BC619C90055B71F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4873F561BC619C90055B71F /* LaunchScreen.storyboard */; };
 		F4873F631BC619C90055B71F /* CongRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4873F621BC619C90055B71F /* CongRequestTests.m */; };
 		F4873F6E1BC619C90055B71F /* CongRequestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4873F6D1BC619C90055B71F /* CongRequestUITests.m */; };
+		F4B656921BC6814A00EF1133 /* WeatherApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B656911BC6814A00EF1133 /* WeatherApi.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		F4873F6D1BC619C90055B71F /* CongRequestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CongRequestUITests.m; sourceTree = "<group>"; };
 		F4873F6F1BC619C90055B71F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4B656831BC66C4B00EF1133 /* CongRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CongRequest.h; sourceTree = "<group>"; };
+		F4B656901BC6814A00EF1133 /* WeatherApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherApi.h; sourceTree = "<group>"; };
+		F4B656911BC6814A00EF1133 /* WeatherApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherApi.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				F4873F4C1BC619C90055B71F /* AppDelegate.m */,
 				F4873F4E1BC619C90055B71F /* ViewController.h */,
 				F4873F4F1BC619C90055B71F /* ViewController.m */,
+				F4B656901BC6814A00EF1133 /* WeatherApi.h */,
+				F4B656911BC6814A00EF1133 /* WeatherApi.m */,
 				F4B656831BC66C4B00EF1133 /* CongRequest.h */,
 				F4873F511BC619C90055B71F /* Main.storyboard */,
 				F4873F541BC619C90055B71F /* Assets.xcassets */,
@@ -333,6 +338,7 @@
 			files = (
 				F4873F501BC619C90055B71F /* ViewController.m in Sources */,
 				F4873F4D1BC619C90055B71F /* AppDelegate.m in Sources */,
+				F4B656921BC6814A00EF1133 /* WeatherApi.m in Sources */,
 				F4873F4A1BC619C90055B71F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
