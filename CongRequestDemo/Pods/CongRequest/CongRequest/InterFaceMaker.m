@@ -31,7 +31,7 @@
     NSMutableCharacterSet *base = [NSMutableCharacterSet letterCharacterSet]; //字母
     NSCharacterSet *decimalDigit = [NSCharacterSet decimalDigitCharacterSet];   //十进制数字
     [base formUnionWithCharacterSet:decimalDigit];    //字母加十进制
-
+    
     
     
     
@@ -40,7 +40,7 @@
     
     [base invert];
     
-   NSString *  safe_path = [[path componentsSeparatedByCharactersInSet:base] componentsJoinedByString:@"_"];
+    NSString *  safe_path = [[path componentsSeparatedByCharactersInSet:base] componentsJoinedByString:@"_"];
     
     
     NSString * str_property = @"@property(copy,nonatomic)NSString * ";
@@ -96,7 +96,7 @@
     
     
     //.m文件
-     str_m = [NSString stringWithFormat:str_m,safe_path,safe_path,safe_path,initWith_m,all_x_eq_x,path_ori,int_cachetime];
+    str_m = [NSString stringWithFormat:str_m,safe_path,safe_path,safe_path,initWith_m,all_x_eq_x,path_ori,int_cachetime];
     
     
     
@@ -117,16 +117,16 @@
     }
     
     
-   
+    
     
     
     NSString * loc_path_h = [loc_path stringByAppendingPathComponent:[safe_path stringByAppendingString:@"Api.h"]];
-     NSString * loc_path_m = [loc_path stringByAppendingPathComponent:[safe_path stringByAppendingString:@"Api.m"]];
+    NSString * loc_path_m = [loc_path stringByAppendingPathComponent:[safe_path stringByAppendingString:@"Api.m"]];
     
     
     if (![fileMgr fileExistsAtPath:loc_path_h]) {
         [str_h writeToFile:loc_path_h atomically:YES
-                encoding:NSUTF8StringEncoding error:&error];
+                  encoding:NSUTF8StringEncoding error:&error];
         
         if (error) {
             NSLog(@"%@",error);
@@ -137,7 +137,7 @@
         if (error) {
             NSLog(@"%@",error);
         }
-    
+        
         
         NSLog(@"=======================接口文件已经产生=================\n%@\n%@",loc_path_h,loc_path_m);
         

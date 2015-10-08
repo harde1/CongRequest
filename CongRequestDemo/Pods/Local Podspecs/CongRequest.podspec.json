@@ -1,0 +1,22 @@
+{
+  "name": "CongRequest",
+  "version": "0.0.1",
+  "summary": "一个建立afn封装包YTKNetwork下的再次扩展包,可以称之为YTKNetwork二次扩展包",
+  "description": "一个建立afn封装包YTKNetwork下的再次扩展包,可以称之为YTKNetwork二次扩展包,把json检查给简化了,json空值null检测加了进去,并且做了排出空值处理,还增加了自动产生合格接口文件的类,接口文件代码生代码",
+  "homepage": "http://blog.csdn.net/jianrenbubai/article/details/48847969",
+  "license": "MIT",
+  "authors": {
+    "剑仁不败": "harde1@163.com",
+    "敏钦": "799621181@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/harde1/CongRequest.git",
+    "commit": "7c91cb3ee9e5a89a8829fdd0c4dba63eb0d41b58"
+  },
+  "source_files": "CongRequest/*.{h,m}",
+  "dependencies": {
+    "YTKNetwork": [
+      "~> 0.5.0"
+    ]
+  }
+}

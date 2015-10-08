@@ -9,10 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface InterFaceMaker : NSObject
+
 @property(nonatomic,copy)NSString * basePath;
 + (InterFaceMaker *)sharedManager;
-
-
-
 +(void)makeInterFaceMakerByStr:(NSString *)str;
+
 @end

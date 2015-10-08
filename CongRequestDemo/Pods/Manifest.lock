@@ -29,12 +29,21 @@ PODS:
     - AFNetworking (~> 2.0)
 
 DEPENDENCIES:
-  - CongRequest (~> 0.0.1)
+  - CongRequest (from `https://github.com/harde1/CongRequest`)
+
+EXTERNAL SOURCES:
+  CongRequest:
+    :git: https://github.com/harde1/CongRequest
+
+CHECKOUT OPTIONS:
+  CongRequest:
+    :commit: 460a3852db8ba6732013b8078f43c0578a319669
+    :git: https://github.com/harde1/CongRequest
 
 SPEC CHECKSUMS:
   AFDownloadRequestOperation: 748a1643423e1ddb23f2178f778087d4f0ae8ac7
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
-  CongRequest: d1f43931b0b0f67d30d17c6921df1da1ef328a07
+  CongRequest: 72e60be9db2ff13cf86a43e55228585b65cba42a
   YTKNetwork: 3f163c181ce5f03d52cf88f39d6757f46894280c
 
 COCOAPODS: 0.38.2
