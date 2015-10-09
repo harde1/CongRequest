@@ -30,3 +30,11 @@ NSLog(@"%@",request.responseString);
 } failure:^(YTKRequest *request) {
 
 }];
+
+#Acknowledgements
+
+AFNetworking
+AFDownloadRequestOperation
+Thanks for their great work.  
+
+
