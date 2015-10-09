@@ -32,9 +32,11 @@ interFaceMaker.basePath = @"/Users/cong/Documents/CongRequest/CongRequestDemo/Co
 /**************************************************************/
 
 第3步、上面那句执行后，就在你项目里面产生两个接口代码文件,上面的产生了,记得导入新生成的文件，就在项目的根目录，用interFaceMaker.basePath来指定的文件路径
-WeatherApi * weatherApi = [[WeatherApi alloc]initWithAk:@"5slgyqGDENN7Sy7pw29IUvrZ" Location:@"北京" Output:@"json"];
 
 /**************************************************************/
+
+WeatherApi * weatherApi = [[WeatherApi alloc]initWithAk:@"5slgyqGDENN7Sy7pw29IUvrZ" Location:@"北京" Output:@"json"];
+
 
 [weatherApi startNotNullWithCompletionBlockWithSuccess:^(YTKRequest *request, NSDictionary *responseDict) {
 
