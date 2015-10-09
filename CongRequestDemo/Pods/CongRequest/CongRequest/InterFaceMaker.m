@@ -108,9 +108,11 @@
     NSString * loc_path = [self sharedManager].basePath;
     
     
-    NSLog(@"%@\n\n\n\n%@",str_h,str_m);
+   
     
     if (!loc_path) {
+        
+        NSLog(@"%@\n\n\n\n%@",str_h,str_m);
         NSLog(@"@waring:[InterFaceMaker sharedManager].baseUrl接口文件的保存路径还没有设置");
         
         return;

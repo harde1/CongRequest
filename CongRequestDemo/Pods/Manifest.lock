@@ -37,13 +37,13 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CongRequest:
-    :commit: 9521dcf213388afbb4aa8c91fb2e0ebb2fec43b3
+    :commit: 9b5a3230edc97700433a75c07e730dc037b7bd38
     :git: https://github.com/harde1/CongRequest
 
 SPEC CHECKSUMS:
   AFDownloadRequestOperation: 748a1643423e1ddb23f2178f778087d4f0ae8ac7
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
-  CongRequest: 9c09d2baa3f586312d4452fd8c181281161455d9
+  CongRequest: b8e01ccbd7077a11ec3d47e1f75ee8ccc9546467
   YTKNetwork: 3f163c181ce5f03d52cf88f39d6757f46894280c
 
 COCOAPODS: 0.38.2
