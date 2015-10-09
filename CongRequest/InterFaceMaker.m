@@ -55,7 +55,7 @@
     NSString * str_h = @"//\n//  %@Api.h\n//  接口文件自动产生\n//\n//  Created by cong\n//\n\n#import <Foundation/Foundation.h>\n#import \"%@.h\"\n\n@interface %@Api : %@\n%@\n%@\n@end";
     NSString * initWith_h = @"";
     //.m文件
-    NSString * str_m = @"//\n//  %@Api.h\n//  接口文件自动产生\n//\n//  Created by cong\n//\n\n#import \"%@Api.h\"\n#import \"UtilReflect.h\"\n\n@implementation %@Api\n\n%@ {\n    self = [super init];\n    if (self) {\n        %@\n    }\n    return self;\n}\n- (NSString *)requestUrl {\n    return @\"/%@\";\n}\n\n- (id)requestArgument {\n    return [UtilReflect dictionartRreflectDataWith:self];\n}\n- (NSInteger)cacheTimeInSeconds {\n    return %d;\n}\n\n//json检查，新增方法,把正确的json例子放在这里，它就会自动判断参数正确不正确\n-(id)jsonStringValidator{\nreturn nil;\n\n}\n@end\n";
+    NSString * str_m = @"//\n//  %@Api.h\n//  接口文件自动产生\n//\n//  Created by cong\n//\n\n#import \"%@Api.h\"\n#import \"UtilReflect.h\"\n\n@implementation %@Api\n\n%@ {\n    self = [super init];\n    if (self) {\n        %@\n    }\n    return self;\n}\n- (NSString *)requestUrl {\n    return @\"/%@\";\n}\n\n- (id)requestArgument {\n    return [UtilReflect dictionartRreflectDataWith:self];\n}\n- (NSInteger)cacheTimeInSeconds {\n    return %d;\n}\n\n//json检查，新增方法,把正确的json例子放在这里，它就会自动判断参数正确不正确,原理就是判断返回来的接口类型有没有错，如果本来是字符串的字段，变成了其他的NSNumber,这里就会检测出来\n-(id)jsonStringValidator{\nreturn nil;\n\n}\n@end\n";
     int int_cachetime = 30;
     NSString * initWith_m = @"";
     NSString * all_x_eq_x = @"";
