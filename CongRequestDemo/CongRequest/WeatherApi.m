@@ -24,10 +24,6 @@
     return @"/weather";
 }
 
-//修改为get请求
-- (YTKRequestMethod)requestMethod {
-    return YTKRequestMethodGet;
-}
 - (id)requestArgument {
     return [UtilReflect dictionartRreflectDataWith:self];
 }
@@ -37,7 +33,7 @@
 
 //json检查，新增方法,把正确的json例子放在这里，它就会自动判断参数正确不正确,原理就是判断返回来的接口类型有没有错，如果本来是字符串的字段，变成了其他的NSNumber,这里就会检测出来
 -(id)jsonStringValidator{
-return @"{\"status\":201,\"message\":\"APP被用户自己禁用，请在控制台解禁\"}";
+return nil;
 
 }
 @end

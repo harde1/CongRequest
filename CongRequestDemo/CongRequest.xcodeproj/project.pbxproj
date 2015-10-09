@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		57414B7F4973737FE9C1BFC2 /* libPods-CongRequest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB3D6DC07A7FF2914D9F9C5 /* libPods-CongRequest.a */; };
+		F42659581BC78575000244C6 /* WeatherApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F42659571BC78575000244C6 /* WeatherApi.m */; settings = {ASSET_TAGS = (); }; };
 		F4873F4A1BC619C90055B71F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4873F491BC619C90055B71F /* main.m */; };
 		F4873F4D1BC619C90055B71F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4873F4C1BC619C90055B71F /* AppDelegate.m */; };
 		F4873F501BC619C90055B71F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4873F4F1BC619C90055B71F /* ViewController.m */; };
@@ -16,7 +17,6 @@
 		F4873F581BC619C90055B71F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4873F561BC619C90055B71F /* LaunchScreen.storyboard */; };
 		F4873F631BC619C90055B71F /* CongRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4873F621BC619C90055B71F /* CongRequestTests.m */; };
 		F4873F6E1BC619C90055B71F /* CongRequestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4873F6D1BC619C90055B71F /* CongRequestUITests.m */; };
-		F4B656921BC6814A00EF1133 /* WeatherApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B656911BC6814A00EF1133 /* WeatherApi.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +40,8 @@
 		2CB3D6DC07A7FF2914D9F9C5 /* libPods-CongRequest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CongRequest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69FD6C2E6D8E5CE1681A35CF /* Pods-CongRequest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CongRequest.release.xcconfig"; path = "Pods/Target Support Files/Pods-CongRequest/Pods-CongRequest.release.xcconfig"; sourceTree = "<group>"; };
 		D38A7850B48F8E5E161F226F /* Pods-CongRequest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CongRequest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CongRequest/Pods-CongRequest.debug.xcconfig"; sourceTree = "<group>"; };
+		F42659561BC78575000244C6 /* WeatherApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherApi.h; sourceTree = "<group>"; };
+		F42659571BC78575000244C6 /* WeatherApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherApi.m; sourceTree = "<group>"; };
 		F4873F451BC619C90055B71F /* CongRequest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CongRequest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4873F491BC619C90055B71F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F4873F4B1BC619C90055B71F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,8 +58,6 @@
 		F4873F691BC619C90055B71F /* CongRequestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CongRequestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4873F6D1BC619C90055B71F /* CongRequestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CongRequestUITests.m; sourceTree = "<group>"; };
 		F4873F6F1BC619C90055B71F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4B656901BC6814A00EF1133 /* WeatherApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherApi.h; sourceTree = "<group>"; };
-		F4B656911BC6814A00EF1133 /* WeatherApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherApi.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +132,8 @@
 				F4873F4C1BC619C90055B71F /* AppDelegate.m */,
 				F4873F4E1BC619C90055B71F /* ViewController.h */,
 				F4873F4F1BC619C90055B71F /* ViewController.m */,
-				F4B656901BC6814A00EF1133 /* WeatherApi.h */,
-				F4B656911BC6814A00EF1133 /* WeatherApi.m */,
+				F42659561BC78575000244C6 /* WeatherApi.h */,
+				F42659571BC78575000244C6 /* WeatherApi.m */,
 				F4873F511BC619C90055B71F /* Main.storyboard */,
 				F4873F541BC619C90055B71F /* Assets.xcassets */,
 				F4873F561BC619C90055B71F /* LaunchScreen.storyboard */,
@@ -335,8 +335,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4873F501BC619C90055B71F /* ViewController.m in Sources */,
+				F42659581BC78575000244C6 /* WeatherApi.m in Sources */,
 				F4873F4D1BC619C90055B71F /* AppDelegate.m in Sources */,
-				F4B656921BC6814A00EF1133 /* WeatherApi.m in Sources */,
 				F4873F4A1BC619C90055B71F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
