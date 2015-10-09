@@ -4,6 +4,8 @@
 
 # cocoapods
 cocoapods内测版
+
+
 pod 'CongRequest', :git => 'https://github.com/harde1/CongRequest'
 
 # 使用方法
@@ -36,7 +38,10 @@ NSLog(@"%@",request.responseString);
 #Acknowledgements
 
 AFNetworking
+
 AFDownloadRequestOperation
+
+
 Thanks for their great work.  
 
 
