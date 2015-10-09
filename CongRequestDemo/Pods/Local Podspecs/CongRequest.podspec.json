@@ -11,7 +11,7 @@
   },
   "source": {
     "git": "https://github.com/harde1/CongRequest.git",
-    "commit": "7c91cb3ee9e5a89a8829fdd0c4dba63eb0d41b58"
+    "commit": "460a3852db8ba6732013b8078f43c0578a319669"
   },
   "source_files": "CongRequest/*.{h,m}",
   "dependencies": {

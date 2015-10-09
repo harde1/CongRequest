@@ -56,7 +56,6 @@
 		F4873F691BC619C90055B71F /* CongRequestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CongRequestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4873F6D1BC619C90055B71F /* CongRequestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CongRequestUITests.m; sourceTree = "<group>"; };
 		F4873F6F1BC619C90055B71F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4B656831BC66C4B00EF1133 /* CongRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CongRequest.h; sourceTree = "<group>"; };
 		F4B656901BC6814A00EF1133 /* WeatherApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherApi.h; sourceTree = "<group>"; };
 		F4B656911BC6814A00EF1133 /* WeatherApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherApi.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,7 +134,6 @@
 				F4873F4F1BC619C90055B71F /* ViewController.m */,
 				F4B656901BC6814A00EF1133 /* WeatherApi.h */,
 				F4B656911BC6814A00EF1133 /* WeatherApi.m */,
-				F4B656831BC66C4B00EF1133 /* CongRequest.h */,
 				F4873F511BC619C90055B71F /* Main.storyboard */,
 				F4873F541BC619C90055B71F /* Assets.xcassets */,
 				F4873F561BC619C90055B71F /* LaunchScreen.storyboard */,
