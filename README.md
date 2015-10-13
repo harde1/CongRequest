@@ -5,6 +5,9 @@
 # cocoapods
 cocoapods内测版
 
+# 作者以及联系方式
+梁殿熊  liangdianxiong@163.com
+cong    harde1@163.com
 
 pod 'CongRequest', :git => 'https://github.com/harde1/CongRequest'
 
