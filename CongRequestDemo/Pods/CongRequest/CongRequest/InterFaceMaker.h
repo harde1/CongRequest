@@ -13,5 +13,6 @@
 @property(nonatomic,copy)NSString * basePath;
 + (InterFaceMaker *)sharedManager;
 +(void)makeInterFaceMakerByStr:(NSString *)str;
++(void)makeInterFaceMakerByStr:(NSString *)str withPath:(NSString *)apiPath;
 
 @end
