@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 cong. All rights reserved.
 //
 
-#import "PrintObject.h"
+#import "DictToObject.h"
 #import <objc/runtime.h>
-@implementation PrintObject
+@implementation DictToObject
 
 
 +(NSDictionary*)getObjectData:(id)obj
@@ -169,9 +169,9 @@
 + (void)setAttributesDictionary:(NSDictionary *)aDict byObject:(id)object{
     @try {
         //获得映射字典
-        NSDictionary *mapDictionary = [PrintObject getObjectData:object];
+        NSDictionary *mapDictionary = [DictToObject getObjectData:object];
         
-        NSDictionary *dict_type =  [PrintObject getObjectType:object];
+        NSDictionary *dict_type =  [DictToObject getObjectType:object];
 
         
         //如果子类没有重写attributeMapDictionary方法，则使用默认映射字典
@@ -189,7 +189,7 @@
         id attributeName = nil;
         while ((attributeName = [keyEnumerator nextObject])) {
             //获得属性的setter
-            SEL setter = [PrintObject _getSetterWithAttributeName:attributeName];
+            SEL setter = [DictToObject _getSetterWithAttributeName:attributeName];
             
             if ([object respondsToSelector:setter]) {
                 //获得映射字典的值，也就是传入字典的键
@@ -213,7 +213,7 @@
                         
                         id newObject = [newClass new];
                         
-                        [PrintObject setAttributesDictionary:aDictValue byObject:newObject];
+                        [DictToObject setAttributesDictionary:aDictValue byObject:newObject];
                         
                         //为属性赋值
                         [object performSelectorOnMainThread:setter withObject:newObject waitUntilDone:[NSThread isMainThread]];
@@ -229,7 +229,7 @@
                         if (newClass) {
                             id newObject = [newClass new];
                             
-                            [PrintObject setAttributesDictionary:aDictValue byObject:newObject];
+                            [DictToObject setAttributesDictionary:aDictValue byObject:newObject];
                             
                             
                             
@@ -256,7 +256,7 @@
                     
                     
                     
-                    BOOL isNum = [aDictValue isKindOfClass:[NSString class]] && isFound && [PrintObject isPureNumandCharacters:aDictValue];
+                    BOOL isNum = [aDictValue isKindOfClass:[NSString class]] && isFound && [DictToObject isPureNumandCharacters:aDictValue];
 //                    NSLog(@"isNum:%d,%@",isNum,aDictValue);
 
                     if (isNum) {

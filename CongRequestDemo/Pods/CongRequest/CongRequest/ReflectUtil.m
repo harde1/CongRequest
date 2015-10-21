@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 cong. All rights reserved.
 //
 
-#import "UtilReflect.h"
+#import "ReflectUtil.h"
 #import <objc/runtime.h>
-@implementation UtilReflect
+@implementation ReflectUtil
 /**
  *  反射赋值
  *
@@ -28,7 +28,7 @@
     //获得所有的属性的名字
     
 
-    for (NSString *key in [UtilReflect propertyKeysWith:obj]) {
+    for (NSString *key in [ReflectUtil propertyKeysWith:obj]) {
         
         //网络数据
         if ([dataSource isKindOfClass:[NSDictionary class]]) {
@@ -72,7 +72,7 @@
 +(NSDictionary *)dictionartRreflectDataWith:(id)obj{
     NSMutableDictionary * dict = [@{}mutableCopy];
     
-    for (NSString *key in [UtilReflect propertyKeysWith:obj]) {
+    for (NSString *key in [ReflectUtil propertyKeysWith:obj]) {
         
         id propertyValue=[obj valueForKey:key];
         
@@ -104,7 +104,7 @@
 +(NSDictionary *)dictionartRreflectDataWithObject:(id)obj{
     NSMutableDictionary * dict = [@{}mutableCopy];
     
-    for (NSString *key in [UtilReflect propertyKeysWith:obj]) {
+    for (NSString *key in [ReflectUtil propertyKeysWith:obj]) {
         
         id propertyValue=[obj valueForKey:key];
         

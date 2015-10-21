@@ -6,7 +6,7 @@
 //
 
 #import "WeatherApi.h"
-#import "UtilReflect.h"
+#import "ReflectUtil.h"
 
 @implementation WeatherApi
 
@@ -25,7 +25,7 @@
 }
 
 - (id)requestArgument {
-    return [UtilReflect dictionartRreflectDataWith:self];
+    return [ReflectUtil dictionartRreflectDataWith:self];
 }
 - (NSInteger)cacheTimeInSeconds {
     return 30;

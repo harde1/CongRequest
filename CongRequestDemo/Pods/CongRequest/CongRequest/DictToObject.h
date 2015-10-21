@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PrintObject : NSObject
+@interface DictToObject : NSObject
 
 //通过对象返回一个NSDictionary，键是属性名称，值是属性值。
 +(NSDictionary*)getObjectData:(id)obj;

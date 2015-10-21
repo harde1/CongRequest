@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UtilReflect : NSObject
+@interface ReflectUtil : NSObject
 
 + (BOOL)reflectDataWith:(id)obj FromOtherObject:(id)dataSource;
 + (NSArray*)propertyKeysWith:(id)obj;
 + (NSDictionary *)dictionartRreflectDataWith:(id)obj;
-+(NSDictionary *)dictionartRreflectDataWithObject:(id)obj;
++ (NSDictionary *)dictionartRreflectDataWithObject:(id)obj;
 @end
