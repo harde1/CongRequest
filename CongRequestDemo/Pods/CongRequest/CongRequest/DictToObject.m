@@ -167,13 +167,13 @@
 
 
 + (void)setAttributesDictionary:(NSDictionary *)aDict byObject:(id)object{
+    NSString *aDictKey;
     @try {
         //获得映射字典
         NSDictionary *mapDictionary = [DictToObject getObjectData:object];
         
         NSDictionary *dict_type =  [DictToObject getObjectType:object];
 
-        
         //如果子类没有重写attributeMapDictionary方法，则使用默认映射字典
         if (mapDictionary == nil) {
             NSMutableDictionary *tempDict = [NSMutableDictionary dictionaryWithCapacity:aDict.count];
@@ -193,7 +193,7 @@
             
             if ([object respondsToSelector:setter]) {
                 //获得映射字典的值，也就是传入字典的键
-                NSString *aDictKey =attributeName;
+                aDictKey =attributeName;
                 //            NSString *aDictKey = [mapDictionary objectForKey:attributeName];
                 //获得传入字典的键对应的值，也就是要赋给属性的值
                 id aDictValue = [aDict objectForKey:aDictKey];
@@ -251,7 +251,7 @@
                     //NSLog(@"数据的类型:%@",dict_type[aDictKey]);
                     
                     BOOL isFound =[dict_type[aDictKey] rangeOfString:@"Tq,N,V"].location != NSNotFound;
-                   isFound = isFound ||[dict_type[aDictKey] rangeOfString:@"Ti,N,V"].location != NSNotFound;
+                    isFound = isFound ||[dict_type[aDictKey] rangeOfString:@"Ti,N,V"].location != NSNotFound;
                    
                     
                     
@@ -276,8 +276,10 @@
                         
                         
                     }else{
+                        BOOL isStr =[dict_type[aDictKey] rangeOfString:@"NSString"].location != NSNotFound;
                         
-                        if ([[object valueForKey:aDictKey] isKindOfClass:[NSString class]]) {
+                        //NSString
+                        if (isStr) {
                             
                             [object setValue:[NSString stringWithFormat:@"%@",aDictValue] forKey:aDictKey];
                         }else{
@@ -311,7 +313,7 @@
                         }else{
                             
                             //为属性赋值
-//                            [object performSelectorOnMainThread:setter withObject:aDictValue waitUntilDone:[NSThread isMainThread]];
+
                             if (aDictValue) {
                                 
                                 if ([[object valueForKey:aDictKey] isKindOfClass:[NSString class]]) {
@@ -334,7 +336,7 @@
         
     }
     @catch (NSException *exception) {
-        NSLog(@"出现异常:%@  in  setAttributesDictionary",exception);
+        NSLog(@"出现异常:%@  in  setAttributesDictionary\n%@--->%@",exception,object,aDictKey);
     }
     @finally {
         
