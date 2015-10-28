@@ -45,7 +45,7 @@
         }
         
         
-//        const char * attributes = property_getAttributes(prop);//获取属性类型
+        //        const char * attributes = property_getAttributes(prop);//获取属性类型
         
         [dic setObject:value forKey:propName];
         
@@ -173,7 +173,7 @@
         NSDictionary *mapDictionary = [DictToObject getObjectData:object];
         
         NSDictionary *dict_type =  [DictToObject getObjectType:object];
-
+        
         //如果子类没有重写attributeMapDictionary方法，则使用默认映射字典
         if (mapDictionary == nil) {
             NSMutableDictionary *tempDict = [NSMutableDictionary dictionaryWithCapacity:aDict.count];
@@ -238,10 +238,33 @@
                             
                             NSLog(@"ok : 找到这个类 <%@>",str_className);
                         }else{
+                            NSString * typeName = dict_type[aDictKey];
+                            NSLog(@"waring : 不存在这个类 <%@><%@>",str_className,typeName);
+                            //查找这个类的类型
+                            //<T@"AccountUserVo",C,N,V_account>
+
+                            NSString* type=@"@\".*\"";
+                            
+                            NSRange range = [typeName rangeOfString:type options:NSRegularExpressionSearch];
+                         
+                            
+                            if (range.location != NSNotFound) {
+                                range.location = range.location+2;
+                                range.length = range.length -3;
+                                str_className =[typeName substringWithRange:range];
+                                NSLog(@"真正的类型是：<%@>",str_className);
+                                
+                                newClass=NSClassFromString(str_className);
+                                 id newObject = [newClass new];
+                                //为属性赋值
+                                [DictToObject setAttributesDictionary:aDictValue byObject:newObject];
+                                //为属性赋值
+                                [object performSelectorOnMainThread:setter withObject:newObject waitUntilDone:[NSThread isMainThread]];
+                                
+                            }
                             
                             
                             
-                            NSLog(@"waring : 不存在这个类 <%@>",str_className);
                         }
                     }
                 }else{
@@ -252,13 +275,13 @@
                     
                     BOOL isFound =[dict_type[aDictKey] rangeOfString:@"Tq,N,V"].location != NSNotFound;
                     isFound = isFound ||[dict_type[aDictKey] rangeOfString:@"Ti,N,V"].location != NSNotFound;
-                   
+                    
                     
                     
                     
                     BOOL isNum = [aDictValue isKindOfClass:[NSString class]] && isFound && [DictToObject isPureNumandCharacters:aDictValue];
-//                    NSLog(@"isNum:%d,%@",isNum,aDictValue);
-
+                    //                    NSLog(@"isNum:%d,%@",isNum,aDictValue);
+                    
                     if (isNum) {
                         
                         
@@ -283,51 +306,51 @@
                             
                             [object setValue:[NSString stringWithFormat:@"%@",aDictValue] forKey:aDictKey];
                         }else{
-                        
-                        
-                        if ([aDictValue isKindOfClass:[NSNumber class]] && isFound) {
-                            NSNumber * num = aDictValue;
                             
-                            if ([num isEqualToNumber:@(0)]) {
-                                [object setValue:@(0) forKey:aDictKey];
+                            
+                            if ([aDictValue isKindOfClass:[NSNumber class]] && isFound) {
+                                NSNumber * num = aDictValue;
+                                
+                                if ([num isEqualToNumber:@(0)]) {
+                                    [object setValue:@(0) forKey:aDictKey];
+                                }else{
+                                    
+                                    if (!aDictValue) {
+                                        
+                                        
+                                        [object setValue:@(0) forKey:aDictKey];
+                                        
+                                    }else if ([aDictValue isKindOfClass:[NSNull class]]) {
+                                        
+                                        [object setValue:@(0) forKey:aDictKey];
+                                        
+                                    }else{
+                                        
+                                        [object setValue:num forKey:aDictKey];
+                                        
+                                    }
+                                    
+                                    
+                                }
+                                
                             }else{
                                 
-                                if (!aDictValue) {
-                                   
-
-                                         [object setValue:@(0) forKey:aDictKey];
-
-                                }else if ([aDictValue isKindOfClass:[NSNull class]]) {
-
-                                        [object setValue:@(0) forKey:aDictKey];
-
-                                }else{
-
-                                        [object setValue:num forKey:aDictKey];
-
-                                }
+                                //为属性赋值
                                 
-                                
-                            }
-                            
-                        }else{
-                            
-                            //为属性赋值
-
-                            if (aDictValue) {
-                                
-                                if ([[object valueForKey:aDictKey] isKindOfClass:[NSString class]]) {
+                                if (aDictValue) {
                                     
-                                    [object setValue:[NSString stringWithFormat:@"%@",aDictValue] forKey:aDictKey];
-                                }else{
-                                
-                               [object setValue:aDictValue forKey:aDictKey];
+                                    if ([[object valueForKey:aDictKey] isKindOfClass:[NSString class]]) {
+                                        
+                                        [object setValue:[NSString stringWithFormat:@"%@",aDictValue] forKey:aDictKey];
+                                    }else{
+                                        
+                                        [object setValue:aDictValue forKey:aDictKey];
+                                    }
                                 }
+                                
+                                
                             }
-                           
-         
-                        }
-                        
+                            
                         }
                     }
                 }
@@ -376,7 +399,7 @@
         NSLog(@"@waring : 不是字符串，不能转化为字典");
         return nil;
     }
-   
+    
     
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     NSError *err;
