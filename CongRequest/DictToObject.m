@@ -224,7 +224,7 @@
                         newClass=NSClassFromString(str_className);
                         
                         
-                        NSLog(@"warning:能不能知道这个类的对象是什么名字:%@,通过名字找对象", NSStringFromClass([[object valueForKey:aDictKey] class]));
+//                        NSLog(@"warning:能不能知道这个类的对象是什么名字:%@,通过名字找对象", NSStringFromClass([[object valueForKey:aDictKey] class]));
                         
                         if (newClass) {
                             id newObject = [newClass new];
@@ -236,10 +236,10 @@
                             //为属性赋值
                             [object performSelectorOnMainThread:setter withObject:newObject waitUntilDone:[NSThread isMainThread]];
                             
-                            NSLog(@"ok : 找到这个类 <%@>",str_className);
+//                            NSLog(@"ok : 找到这个类 <%@>",str_className);
                         }else{
                             NSString * typeName = dict_type[aDictKey];
-                            NSLog(@"waring : 不存在这个类 <%@><%@>",str_className,typeName);
+//                            NSLog(@"waring : 不存在这个类 <%@><%@>",str_className,typeName);
                             //查找这个类的类型
                             //<T@"AccountUserVo",C,N,V_account>
 
@@ -252,7 +252,7 @@
                                 range.location = range.location+2;
                                 range.length = range.length -3;
                                 str_className =[typeName substringWithRange:range];
-                                NSLog(@"真正的类型是：<%@>",str_className);
+//                                NSLog(@"真正的类型是：<%@>",str_className);
                                 
                                 newClass=NSClassFromString(str_className);
                                  id newObject = [newClass new];
