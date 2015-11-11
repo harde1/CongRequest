@@ -53,6 +53,7 @@ static const void *notNullDictKey = &notNullDictKey;
         
         if (request.responseStatusCode==0) {
             NSLog(@"网络不给力，请检查网络配置");
+            failure(yTKRequest);
         }else{
             failure(yTKRequest);
         }
