@@ -50,7 +50,7 @@
                     
                     NSMutableDictionary * newDict = [NSMutableDictionary dictionaryWithDictionary:dict];
                     
-                    newDict[key] = [format new];
+                    newDict[key] = [[[format class] alloc]init];
                     json = newDict;
                     
                     //把空值去掉
@@ -65,7 +65,8 @@
                     
                     NSString * str_change_ori = [NSString stringWithFormat:@"\"%@\" : null",key];
                     
-                    id oo = [format new];
+                    id oo = [[[format class] alloc]init];
+                    
                     if ([oo isKindOfClass:[NSArray class]]) {
                         str_change = [NSString stringWithFormat:@"\"%@\" : []",key];
                     }else  if ([oo isKindOfClass:[NSDictionary class]]) {
