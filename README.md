@@ -9,9 +9,14 @@ pod 'CongRequest', :git => 'https://github.com/harde1/CongRequest'
 
 # 作者以及联系方式
 
-梁殿熊  liangdianxiong@163.com
 
 cong    harde1@163.com
+
+副作者：
+
+I believe     benhu_gzx@163.com
+
+梁殿熊  liangdianxiong@163.com
 
 # 使用方法
 
